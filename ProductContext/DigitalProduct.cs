@@ -1,4 +1,5 @@
-using StoreBox.ProductContect.Enum;
+using StoreBox.ProductContect.Enums;
+using StoreBox.ProductContext.Enums;
 
 namespace StoreBox.ItemContext
 {
@@ -10,15 +11,18 @@ namespace StoreBox.ItemContext
 
         }
 
-        public DigitalProduct(EDigitalType digitalType, DateTime releaseDate, string name, double price, string desciption)
+        public DigitalProduct(EDigitalType digitalType, DateTime releaseDate, EAgeRating ageRating,
+         string name, double price, string desciption)
             : base(name, price, desciption)
         {
             DigitalType = digitalType;
             ReleaseDate = releaseDate;
+            AgeRating = ageRating;
         }
 
         public EDigitalType DigitalType { get; set; }
         public DateTime ReleaseDate { get; set; }
+        public EAgeRating AgeRating { get; set; }
     }
 
 }

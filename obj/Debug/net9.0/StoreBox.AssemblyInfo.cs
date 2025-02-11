@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StoreBox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3a470ac7594ef6d625059106e3583531f870b61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d32f9ace139a83a6769b015bf597229ef0e6232")]
 [assembly: System.Reflection.AssemblyProductAttribute("StoreBox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StoreBox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
