@@ -6,11 +6,6 @@ namespace StoreBox.ItemContext
 
     public class DigitalProduct : Product
     {
-        public DigitalProduct()
-        {
-
-        }
-
         public DigitalProduct(EDigitalType digitalType, DateTime releaseDate, EAgeRating ageRating,
          string name, double price, string desciption)
             : base(name, price, desciption)
@@ -23,6 +18,16 @@ namespace StoreBox.ItemContext
         public EDigitalType DigitalType { get; set; }
         public DateTime ReleaseDate { get; set; }
         public EAgeRating AgeRating { get; set; }
+
+        public override void ShowDetails()
+        {
+            Console.WriteLine($"Digital Product: {Name}");
+            Console.WriteLine($"Price: {Price}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Digital Type: {DigitalType}");
+            Console.WriteLine($"Release Date: {ReleaseDate}");
+            Console.WriteLine($"Age Rating: {AgeRating}");
+        }
     }
 
 }
