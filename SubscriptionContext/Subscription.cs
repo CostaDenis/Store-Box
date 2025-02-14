@@ -9,9 +9,8 @@ namespace StoreBox.SubscriptionContext
 
         public Guid SubscriptionId { get; set; }
         public Guid CustomerId { get; set; }
-        // public string PlanName { get; set; }
         public EPlanName PlanName { get; set; }
-        public double RecurringAmount { get; set; }
+        public decimal RecurringAmount { get; set; }
         public EBillingCycle BillingCycle { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
