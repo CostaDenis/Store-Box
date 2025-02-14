@@ -3,10 +3,9 @@ using StoreBox.PaymentContext.Enums;
 namespace StoreBox.PaymentContext
 {
 
-    public class CreditCardPayment : Payment
+    public class DebitPayment : Payment
     {
-
-        public CreditCardPayment(string cardNumber, string cardHolderName, DateTime expirationDate,
+        public DebitPayment(string cardNumber, string cardHolderName, DateTime expirationDate,
                 int cvv, Guid idCustomer, decimal amount, DateTime dueDate,
                         DateTime paymentDate, EPaymentStatus status) : base(idCustomer, amount, dueDate,
                         paymentDate, status)
@@ -25,7 +24,7 @@ namespace StoreBox.PaymentContext
         public override void Pay()
         {
             Status = EPaymentStatus.Completed;
-            Console.WriteLine("Credit card payment done!");
+            Console.WriteLine("Debit payment done!");
         }
     }
 }
