@@ -3,15 +3,17 @@ namespace StoreBox.ItemContext
 
     public abstract class Product
     {
-        public Product(string name, double price, string desciption)
+        public Product(Guid idSeller, string name, double price, string desciption)
         {
             Id = Guid.NewGuid();
+            IdSeller = idSeller;
             Name = name;
             Price = price;
             Description = desciption;
         }
 
         public Guid Id { get; set; }
+        public Guid IdSeller { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
