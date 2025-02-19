@@ -1,4 +1,4 @@
-using StoreBox.ItemContext;
+using StoreBox.ProductContext;
 
 namespace StoreBox.ProductContext
 {

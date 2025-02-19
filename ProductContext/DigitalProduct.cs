@@ -1,7 +1,7 @@
 using StoreBox.ProductContect.Enums;
 using StoreBox.ProductContext.Enums;
 
-namespace StoreBox.ItemContext
+namespace StoreBox.ProductContext
 {
 
     public class DigitalProduct : Product

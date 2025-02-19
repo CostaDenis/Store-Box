@@ -1,9 +1,9 @@
-namespace StoreBox.ItemContext
+namespace StoreBox.ProductContext
 {
 
     public abstract class Product
     {
-        public Product(Guid idSeller, string name, double price, string desciption)
+        public Product(Guid idSeller, string name, decimal price, string desciption)
         {
             Id = Guid.NewGuid();
             IdSeller = idSeller;
@@ -15,7 +15,7 @@ namespace StoreBox.ItemContext
         public Guid Id { get; set; }
         public Guid IdSeller { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
 
         // public abstract void AddToCart();
