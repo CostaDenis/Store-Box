@@ -7,8 +7,8 @@ namespace StoreBox.ProductContext
     public class DigitalProduct : Product
     {
         public DigitalProduct(EDigitalType digitalType, DateTime releaseDate, EAgeRating ageRating,
-         string name, double price, string desciption)
-            : base(name, price, desciption)
+         Guid sellerId, string name, decimal price, string description)
+            : base(sellerId, name, price, description)
         {
             DigitalType = digitalType;
             ReleaseDate = releaseDate;

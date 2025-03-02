@@ -1,5 +1,5 @@
 using StoreBox.SubsciptionContext.Enums;
-using StoreBox.Subscription.Enums;
+using StoreBox.SubscriptionContext.Enums;
 
 namespace StoreBox.SubscriptionContext
 {

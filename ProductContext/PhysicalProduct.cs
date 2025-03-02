@@ -6,8 +6,8 @@ namespace StoreBox.ProductContext
     public class PhysicalProduct : Product
     {
         public PhysicalProduct(double weight, string dimension, DateTime manufactureDate,
-         string name, double price, string desciption)
-            : base(name, price, desciption)
+         Guid sellerId, string name, decimal price, string description)
+            : base(sellerId, name, price, description)
         {
             Weight = weight;
             Dimension = dimension;

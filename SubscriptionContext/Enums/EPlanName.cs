@@ -1,4 +1,4 @@
-namespace StoreBox.Subscription.Enums
+namespace StoreBox.SubscriptionContext.Enums
 {
 
     public enum EPlanName

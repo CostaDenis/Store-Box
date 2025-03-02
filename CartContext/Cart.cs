@@ -9,7 +9,7 @@ namespace StoreBox.CartContext
         {
             Id = Guid.NewGuid();
             CustomerId = customerId;
-            Items = items;
+            Items = items ?? new List<Product>();
         }
         public Guid Id { get; set; }
         public Guid CustomerId { get; set; }
@@ -28,6 +28,19 @@ namespace StoreBox.CartContext
         public void ClearCart()
         {
             Items.Clear();
+        }
+
+        public void ShowCart()
+        {
+            Console.WriteLine($"Cart ID: {Id}");
+            Console.WriteLine($"Customer ID: {CustomerId}");
+            Console.WriteLine($"Total: {Total}");
+            Console.WriteLine("Items:");
+
+            foreach (var item in Items)
+            {
+                item.ShowDetails();
+            }
         }
     }
 }

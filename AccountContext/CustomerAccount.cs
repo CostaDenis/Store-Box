@@ -12,7 +12,11 @@ namespace StoreBox.AccountContext
 
         public override void ShowDetails()
         {
-            Console.WriteLine($"Customer: {Name} - {Email}");
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Customer Account");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Email: {Email}");
+            Console.WriteLine("--------------------------------------");
         }
     }
 }
