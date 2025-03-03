@@ -1,3 +1,5 @@
+using StoreBox.PaymentContext;
+using StoreBox.PaymentContext.Enums;
 using StoreBox.ProductContext;
 
 namespace StoreBox.CartContext
@@ -15,6 +17,7 @@ namespace StoreBox.CartContext
         public Guid CustomerId { get; set; }
         public List<Product> Items { get; set; }
         public decimal Total => Items.Sum(i => i.Price);
+        public Payment? Payment { get; private set; }
 
         public void AddItem(Product item)
         {
@@ -24,10 +27,19 @@ namespace StoreBox.CartContext
         {
             Items.Remove(item);
         }
-
         public void ClearCart()
         {
             Items.Clear();
+        }
+
+        public void SetPayment(Payment payment)
+        {
+            if (Payment != null)
+            {
+                return;
+            }
+
+            Payment = payment;
         }
 
         public void ShowCart()
@@ -41,6 +53,31 @@ namespace StoreBox.CartContext
             {
                 item.ShowDetails();
             }
+        }
+
+        public void PucharseCart()
+        {
+
+            if (Payment == null)
+            {
+                Console.WriteLine("Add a payment method to proceed with the purchase!");
+                return;
+            }
+
+            if (Payment.Status != EPaymentStatus.Completed)
+            {
+                Console.WriteLine("Payment refused!");
+                return;
+            }
+
+            if (Items.Count == 0)
+            {
+                Console.WriteLine("Add items to the cart to proceed with the purchase!");
+                return;
+            }
+
+            Console.WriteLine("Purchase completed!");
+            ClearCart();
         }
     }
 }

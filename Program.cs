@@ -2,6 +2,9 @@
 using StoreBox.AccountContext;
 using StoreBox.AccountContext.Enums;
 using StoreBox.CartContext;
+using StoreBox.PaymentContext;
+using StoreBox.PaymentContext.Enums;
+using StoreBox.ProductContect.Enums;
 using StoreBox.ProductContext;
 
 namespace StoreBox
@@ -21,15 +24,33 @@ namespace StoreBox
 
             PhysicalProduct DeadRisingXONE = new PhysicalProduct(1.5, "20x20x20", DateTime.Now, amanda.Id,
                 "Dead Rising 4", 59.99m, "Xbox One Game");
-            PhysicalProduct FarCryPrimalXONE = new PhysicalProduct(1.5, "20x20x20", DateTime.Now, amanda.Id,
-                "Far Cry Primal", 59.99m, "Xbox One Game");
+
+            DigitalProduct XboxLive = new DigitalProduct(EDigitalType.StreamingSubscription, DateTime.Today,
+            ProductContext.Enums.EAgeRating.Quatorze, amanda.Id,
+            "Xbox Live Subscription", 29.99m, "Xbox Live Subscription for 1 month");
 
             var product = new List<Product>();
             product.Add(DeadRisingXONE);
-            product.Add(FarCryPrimalXONE);
+            product.Add(XboxLive);
 
             Cart cart = new Cart(denis.Id, product);
-            cart.ShowCart();
+            // cart.ShowCart();
+
+            // PixPayment pix = new PixPayment("123456789", denis.Id, cart.Total, DateTime.Now,
+            // DateTime.Now.AddSeconds(120), EPaymentStatus.Pending);
+
+            PixPayment pix = new PixPayment("123456789", denis.Id, cart.Total, DateTime.Now,
+            DateTime.Now.AddSeconds(120), EPaymentStatus.Completed);
+
+            cart.SetPayment(pix);
+            cart.PucharseCart();
+
+
+            // StorePrimeVideo sPrimeVideo = new StorePrimeVideo(denis.Id, EPlanName.Basic, 9.99m, EBillingCycle.Monthly,
+            //  DateTime.Now, null, true);
+
+            // sPrimeVideo.ShowDetails();
+
 
 
         }

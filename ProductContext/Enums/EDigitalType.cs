@@ -7,7 +7,7 @@ namespace StoreBox.ProductContect.Enums
         Course = 3,
         Music = 4,
         SoftwareLicense = 5,
-        StramingSubscription = 6
+        StreamingSubscription = 6
 
     }
 }
