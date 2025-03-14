@@ -14,60 +14,59 @@ O objetivo desse projeto é praticar os conceitos de POO adquiridos no curso Fun
 
 ## Estrutura do projeto
 
-### ProductContext
+### **ProductContext**
 Gerencia os produtos da loja, incluindo itens físicos e digitais.
 
+- Product (classe abstrata): Classe base para todos os produtos.
 
-Product (classe abstrata): Classe base para todos os produtos.
+- DigitalProduct: Representa um produto digital.
 
-DigitalProduct: Representa um produto digital.
-
-PhysicalProduct: Representa um produto físico.
-
+- PhysicalProduct: Representa um produto físico.
 
 
 
-### PaymentContext
+
+### **PaymentContext**
 Responsável pelo sistema de pagamentos, permitindo diferentes formas de pagamento.
 
-Payment (classe abstrata): Classe base para pagamentos.
+- Payment (classe abstrata): Classe base para pagamentos.
 
-BoletoPayment: Pagamento via boleto.
+- BoletoPayment: Pagamento via boleto.
 
-CreditCardPayment: Pagamento via cartão de crédito.
+- CreditCardPayment: Pagamento via cartão de crédito.
 
-CryptoPayment: Pagamento via criptomoedas.
+- CryptoPayment: Pagamento via criptomoedas.
 
-DebitCardPayment: Pagamento via cartão de débito.
+- DebitCardPayment: Pagamento via cartão de débito.
 
-PixPayment: Pagamento via PIX.
+- PixPayment: Pagamento via PIX.
 
-SubscriptionPayment: Pagamento de assinaturas recorrentes.
+- SubscriptionPayment: Pagamento de assinaturas recorrentes.
 
 
-### AccountContext
+### **AccountContext**
 Gerencia contas de usuários, separando compradores e vendedores.
 
-Account (classe abstrata): Classe base para contas de usuários.
+- Account (classe abstrata): Classe base para contas de usuários.
 
-CustomerAccount: Conta de um cliente.
+- CustomerAccount: Conta de um cliente.
 
-SellerAccount: Conta de um vendedor.
+- SellerAccount: Conta de um vendedor.
 
 
-### SubscriptionContext
+### **SubscriptionContext**
 Gerencia assinaturas de serviços dentro da loja.
 
-Subscription (classe abstrata): Classe base para assinaturas.
+- Subscription (classe abstrata): Classe base para assinaturas.
 
-StorePrimeVideo: Classe de assinatura.
+- StorePrimeVideo: Classe de assinatura.
 
 
-### CartContext
+### **CartContext**
 
 Gerencia o carrinho de compras e a lista de produtos adicionados.
 
-Cart: Classe que representa o carrinho de compras.
+- Cart: Classe que representa o carrinho de compras.
 
 
 ## Pré-requisito
