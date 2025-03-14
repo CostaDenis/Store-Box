@@ -12,8 +12,18 @@ namespace AccountContext
         }
         public double Rating => ScoreHistory.Count > 0 ? ScoreHistory.Sum() / ScoreHistory.Count : 0;  //Media de todas as notas
         public List<int> ScoreHistory { get; set; }
-        public int Score { get; set; } //Ver a questao das notas
+        public int Score { get; set; }
 
+        public void AddScore(EScoreSeller score, bool saleCompleted)
+        {
+            if (!saleCompleted)
+            {
+                throw new InvalidOperationException("A venda não foi concluída. Não é possível avaliar o vendedor.");
+            }
+
+            ScoreHistory.Add((int)score);
+
+        }
         public override void ShowDetails()
         {
             Console.WriteLine("--------------------------------------");

@@ -71,13 +71,17 @@ namespace StoreBox.SubscriptionContext
             Console.WriteLine("Recurring Amount: " + RecurringAmount);
             Console.WriteLine("Billing Cycle: " + BillingCycle);
             Console.WriteLine("Start Date: " + StartDate);
-            Console.WriteLine("End Date: " + EndDate);
+
+            if (EndDate.HasValue)
+                Console.WriteLine("End Date: " + EndDate);
+
             Console.WriteLine("Next Billing Date: " + NextBillingDate);
             Console.WriteLine("Is Auto Renewal: " + IsAutoRenewal);
         }
         public void CancelSubscription()
         {
             IsAutoRenewal = false;
+            EndDate = CalculateNextBillingDate();
         }
 
         public void RenewSubscription()

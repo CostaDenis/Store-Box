@@ -55,29 +55,30 @@ namespace StoreBox.CartContext
             }
         }
 
-        public void PucharseCart()
+        public bool PucharseCart()
         {
 
             if (Payment == null)
             {
                 Console.WriteLine("Add a payment method to proceed with the purchase!");
-                return;
+                return false;
             }
 
             if (Payment.Status != EPaymentStatus.Completed)
             {
                 Console.WriteLine("Payment refused!");
-                return;
+                return false;
             }
 
             if (Items.Count == 0)
             {
                 Console.WriteLine("Add items to the cart to proceed with the purchase!");
-                return;
+                return false;
             }
 
             Console.WriteLine("Purchase completed!");
             ClearCart();
+            return true;
         }
     }
 }

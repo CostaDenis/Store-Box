@@ -6,6 +6,9 @@ using StoreBox.PaymentContext;
 using StoreBox.PaymentContext.Enums;
 using StoreBox.ProductContect.Enums;
 using StoreBox.ProductContext;
+using StoreBox.SubsciptionContext.Enums;
+using StoreBox.SubscriptionContext;
+using StoreBox.SubscriptionContext.Enums;
 
 namespace StoreBox
 {
@@ -36,18 +39,17 @@ namespace StoreBox
             Cart cart = new Cart(denis.Id, product);
             // cart.ShowCart();
 
-            // PixPayment pix = new PixPayment("123456789", denis.Id, cart.Total, DateTime.Now,
-            // DateTime.Now.AddSeconds(120), EPaymentStatus.Pending);
-
             PixPayment pix = new PixPayment("123456789", denis.Id, cart.Total, DateTime.Now,
             DateTime.Now.AddSeconds(120), EPaymentStatus.Completed);
 
             cart.SetPayment(pix);
-            cart.PucharseCart();
+            amanda.AddScore(EScoreSeller.Five, cart.PucharseCart());
 
 
             // StorePrimeVideo sPrimeVideo = new StorePrimeVideo(denis.Id, EPlanName.Basic, 9.99m, EBillingCycle.Monthly,
             //  DateTime.Now, null, true);
+
+            // // sPrimeVideo.CancelSubscription();
 
             // sPrimeVideo.ShowDetails();
 
