@@ -44,6 +44,9 @@ namespace StoreBox.CartContext
 
         public void ShowCart()
         {
+            Console.WriteLine();
+
+            Console.WriteLine("--------------------------------------");
             Console.WriteLine($"Cart ID: {Id}");
             Console.WriteLine($"Customer ID: {CustomerId}");
             Console.WriteLine($"Total: {Total}");
@@ -53,6 +56,9 @@ namespace StoreBox.CartContext
             {
                 item.ShowDetails();
             }
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine();
+
         }
 
         public bool PucharseCart()

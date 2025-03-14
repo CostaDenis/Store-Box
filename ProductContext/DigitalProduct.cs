@@ -21,12 +21,16 @@ namespace StoreBox.ProductContext
 
         public override void ShowDetails()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------");
             Console.WriteLine($"Digital Product: {Name}");
             Console.WriteLine($"Price: {Price}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Digital Type: {DigitalType}");
             Console.WriteLine($"Release Date: {ReleaseDate}");
             Console.WriteLine($"Age Rating: {AgeRating}");
+            Console.WriteLine();
+
         }
     }
 

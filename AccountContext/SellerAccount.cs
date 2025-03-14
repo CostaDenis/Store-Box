@@ -26,12 +26,14 @@ namespace AccountContext
         }
         public override void ShowDetails()
         {
+            Console.WriteLine();
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Seller Account");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Rating: {Rating}");
             Console.WriteLine("--------------------------------------");
+            Console.WriteLine();
         }
     }
 }
